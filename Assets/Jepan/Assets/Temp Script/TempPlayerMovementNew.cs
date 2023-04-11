@@ -61,8 +61,10 @@ public class TempPlayerMovementNew : MonoBehaviour
 	[SerializeField] private LayerMask _groundLayer;
 	#endregion
 
+	Animator anim;
 	private void Awake()
 	{
+		anim = GetComponent<Animator>();
 		RB = GetComponent<Rigidbody2D>();
 	}
 
@@ -258,6 +260,54 @@ public class TempPlayerMovementNew : MonoBehaviour
 
 		if (IsSliding)
 			Slide();
+
+		if ((LastOnWallLeftTime > 0 || LastOnWallRightTime > 0))
+        {
+			if(LastOnGroundTime < 0)
+            {
+				anim.SetBool("isWallSliding", true);
+			}
+			else if(LastOnGroundTime > 0 && !anim.GetBool("isWalking"))
+            {
+				anim.SetBool("isWallSliding", true);
+			}
+            else
+            {
+				anim.SetBool("isWallSliding", false);
+			}
+        }
+        else
+        {
+			anim.SetBool("isWallSliding", false);
+		}
+
+        if (IsDashing)
+        {
+			
+        }
+
+		if (LastOnGroundTime < 0 && RB.velocity.y < 0 && (LastOnWallLeftTime < 0 && LastOnWallRightTime < 0) && !IsDashing)
+		{
+			anim.SetBool("isFalling", true);
+		}
+        else
+        {
+			anim.SetBool("isFalling", false);
+		}
+
+		if(LastOnGroundTime > 0 &&	Mathf.Abs(RB.velocity.x) > 0.01f && !IsDashing)
+        {
+			anim.SetBool("isWalking", true);
+        }
+        else
+        {
+			anim.SetBool("isWalking", false);
+		}
+
+        if (IsDashing)
+        {
+			anim.SetTrigger("doDash");
+        }
 	}
 
 	#region INPUT CALLBACKS
@@ -344,6 +394,7 @@ public class TempPlayerMovementNew : MonoBehaviour
 	#region JUMP METHODS
 	private void Jump()
 	{
+		anim.SetTrigger("doJump");
 		LastPressedJumpTime = 0;
 		LastOnGroundTime = 0;
 
