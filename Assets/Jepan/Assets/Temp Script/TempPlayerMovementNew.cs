@@ -63,8 +63,10 @@ public class TempPlayerMovementNew : MonoBehaviour
 
 	Animator anim;
 	TrailRenderer Tr;
+	tempPlayerHealth Health;
 	private void Awake()
 	{
+		Health = GetComponent<tempPlayerHealth>();
 		Tr = GetComponent<TrailRenderer>();
 		anim = GetComponent<Animator>();
 		RB = GetComponent<Rigidbody2D>();
@@ -309,6 +311,7 @@ public class TempPlayerMovementNew : MonoBehaviour
         if (IsDashing)
         {
 			anim.SetTrigger("doDash");
+			Health.setTemporaryInvurnerable(Data.dashAttackTime);
         }
 
 		Tr.emitting = !anim.GetBool("isWalking");

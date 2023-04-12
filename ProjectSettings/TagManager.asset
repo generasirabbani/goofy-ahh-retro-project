@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Ground
   - Bullet
+  - enemyAttack
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Test Layer
   - Player
   - Bullet
-  - 
-  - 
+  - Enemies
+  - EnemyAttacks
   - 
   - 
   - 
