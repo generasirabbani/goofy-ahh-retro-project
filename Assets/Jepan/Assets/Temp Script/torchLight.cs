@@ -9,6 +9,7 @@ public class torchLight : MonoBehaviour
     // Start is called before the first frame update
     Light2DBase lights;
     Light2D Lights;
+    [SerializeField] float baseIntensity;
     void Start()
     {
         Lights = GetComponent<Light2D>();
@@ -17,6 +18,6 @@ public class torchLight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Lights.intensity = Mathf.PingPong(Time.time/10, 0.1f) + 0.2f;
+        Lights.intensity = Mathf.PingPong(Time.time/10, 0.1f) + baseIntensity;
     }
 }

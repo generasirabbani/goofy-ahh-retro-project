@@ -31,7 +31,7 @@ public class bulletScript : MonoBehaviour
     void onDamaging()
     {
         lifetime = 0;
-        rb.velocity = Vector3.zero;
+        //rb.velocity = Vector3.zero;
         rb.bodyType = RigidbodyType2D.Static;
         Destroy(gameObject, deadTime);
         anim.SetTrigger("Destroy");

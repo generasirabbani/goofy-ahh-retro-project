@@ -16,8 +16,18 @@ public class CameraFollow : MonoBehaviour
     private void FixedUpdate()
     {
         
-        Follow();
+        
         //
+    }
+
+    private void LateUpdate()
+    {
+        Follow();
+    }
+
+    private void Update()
+    {
+        
     }
     void Follow()
     {
