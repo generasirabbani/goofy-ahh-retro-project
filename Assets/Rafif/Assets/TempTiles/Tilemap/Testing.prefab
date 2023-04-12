@@ -409,11 +409,11 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7759476221313238478}
   m_Enabled: 1
-  m_CellSize: {x: 1.9335938, y: 1.9335938, z: 0}
+  m_CellSize: {x: 1.28, y: 1.0546875, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &570052034636778900
+--- !u!114 &3196038934886788610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
