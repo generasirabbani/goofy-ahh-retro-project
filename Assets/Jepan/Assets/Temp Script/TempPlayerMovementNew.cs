@@ -62,8 +62,10 @@ public class TempPlayerMovementNew : MonoBehaviour
 	#endregion
 
 	Animator anim;
+	TrailRenderer Tr;
 	private void Awake()
 	{
+		Tr = GetComponent<TrailRenderer>();
 		anim = GetComponent<Animator>();
 		RB = GetComponent<Rigidbody2D>();
 	}
@@ -308,6 +310,8 @@ public class TempPlayerMovementNew : MonoBehaviour
         {
 			anim.SetTrigger("doDash");
         }
+
+		Tr.emitting = !anim.GetBool("isWalking");
 	}
 
 	#region INPUT CALLBACKS
