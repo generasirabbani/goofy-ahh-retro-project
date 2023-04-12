@@ -11,8 +11,11 @@ public class bulletScript : MonoBehaviour
     Rigidbody2D rb;
     ParticleSystem ps;
     float lifetime = 0;
+    public AudioClip boom;
+    AudioSource audios;
     void Start()
     {
+        audios = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
         ps = GetComponent<ParticleSystem>();
         anim = GetComponent<Animator>();
@@ -35,6 +38,7 @@ public class bulletScript : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         Destroy(gameObject, deadTime);
         anim.SetTrigger("Destroy");
+        audios.PlayOneShot(boom);
         ps.Play();
     }
 

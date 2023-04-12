@@ -271,10 +271,10 @@ public class TempPlayerMovementNew : MonoBehaviour
             {
 				anim.SetBool("isWallSliding", true);
 			}
-			else if(LastOnGroundTime > 0 && !anim.GetBool("isWalking"))
-            {
-				anim.SetBool("isWallSliding", true);
-			}
+			//else if(LastOnGroundTime > 0 && !anim.GetBool("isWalking"))
+            //{
+				//anim.SetBool("isWallSliding", true);
+			//}
             else
             {
 				anim.SetBool("isWallSliding", false);
