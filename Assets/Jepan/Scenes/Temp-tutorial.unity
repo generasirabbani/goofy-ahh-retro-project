@@ -191,13 +191,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Jerangkong can also Dash with left shift.
+  m_text: 'Jerangkong can also Dash with left shift or right mouse button.
 
-    Dashing when holding directional
-    input will dash to inputted direction.
+    Dashing
+    when holding directional input will dash to inputted direction.
 
-    Dash with perfect timing can dodge
-    enemy''s attack.
+    Dash with
+    perfect timing can dodge enemy''s attack.
 
 '
   m_isRightToLeft: 0
@@ -83501,10 +83501,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Jerangkong can jump with Space, C or J
+  m_text: 'Jerangkong can jump with Space.
 
-    Holding down your jump button
-    will slightly increase the height.
+    Holding down your jump button will
+    slightly increase the height.
 
 '
   m_isRightToLeft: 0

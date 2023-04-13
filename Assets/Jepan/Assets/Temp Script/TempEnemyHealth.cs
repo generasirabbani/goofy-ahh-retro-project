@@ -11,7 +11,7 @@ public class TempEnemyHealth : MonoBehaviour
     public bool invurnerable;
     //public GameObject deadPanel;
     [SerializeField] float invurnerableTime = 0f;
-    [SerializeField] float damageAnimationTime = 0.1f;
+    [SerializeField] float damageAnimationTime = 0.3f;
     Animator animator;
     void Start()
     {
@@ -33,9 +33,16 @@ public class TempEnemyHealth : MonoBehaviour
     {
         currentHealth--;
         animator.SetTrigger("doDamaged");
+        Invoke("exitDamaged",damageAnimationTime);
         //invurnerable = true;
         //Invoke("exitInvurnerable", invurnerableTime);
     }
+
+    void exitDamaged()
+    {
+        animator.ResetTrigger("doDamaged");
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet") && !invurnerable)

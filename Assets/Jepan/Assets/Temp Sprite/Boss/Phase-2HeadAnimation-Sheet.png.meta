@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43f28393f7f809148b7857fc0fb720ba
+guid: e083ba04eb0ff834d857870b19a69257
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,76 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: background_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5198592dc1485184bb996bbf2878a387
-      internalID: -614697368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91a8f379e73be854fb65b6186c30d57f
-      internalID: -115719546
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea358955d1bd8b94a99111f156eb18ce
-      internalID: -1931183692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: background_3
+      name: Phase-2HeadAnimation-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 960
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6040776958c83742b5de7d0ffebb9af
-      internalID: 412959432
+      spriteID: 35dfe493eb5e51a45a2519a07e0767c5
+      internalID: 744209399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: background_4
+      name: Phase-2HeadAnimation-Sheet_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 960
         y: 0
-        width: 32
-        height: 32
+        width: 960
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fc1fd7ee399ee44eb82a38973f674ed
-      internalID: -2143038606
+      spriteID: ce0a909d339509b4fa0374b11fe24313
+      internalID: 1265243469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: background_5
+      name: Phase-2HeadAnimation-Sheet_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 1920
         y: 0
-        width: 32
-        height: 32
+        width: 960
+        height: 640
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,8 +197,218 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1a524fd14d8ce449de8ce230f316ce
-      internalID: 2117879914
+      spriteID: bdb63a81a93317a4e8283f97a031bceb
+      internalID: 1643879305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24fef8a3ecd7814b829e46938375ba3
+      internalID: 1315820950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea99a72922cb2643ade7af8fb6cc798
+      internalID: -552947639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec7f0f1b2d47744a80dd1fa567b61af
+      internalID: -724569430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 5760
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c68ad144e3ac7409d184983164c9c8
+      internalID: 1657765065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 6720
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6e8a4475daf7d4fa08bc7278b76d39
+      internalID: 1481953191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 858497bfb51d1934da063328ed11694d
+      internalID: 1572159548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 8640
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6070e4693283324e855d73123d00dd3
+      internalID: -1547105297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aba3ef0c59099f4cbc63d95545f21ac
+      internalID: -2080089762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 10560
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b5a0224562674246836ae0a0015ed7a
+      internalID: -1285184164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Phase-2HeadAnimation-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 11520
+        y: 0
+        width: 960
+        height: 640
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46b7c3160a5e5b42bd62ea606faa8d3
+      internalID: 187929920
       vertices: []
       indices: 
       edges: []
@@ -277,12 +424,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      background_1: -115719546
-      background_0: -614697368
-      background_5: 2117879914
-      background_2: -1931183692
-      background_3: 412959432
-      background_4: -2143038606
+      Phase-2HeadAnimation-Sheet_8: 1572159548
+      Phase-2HeadAnimation-Sheet_11: -1285184164
+      Phase-2HeadAnimation-Sheet_2: 1643879305
+      Phase-2HeadAnimation-Sheet_9: -1547105297
+      Phase-2HeadAnimation-Sheet_4: -552947639
+      Phase-2HeadAnimation-Sheet_3: 1315820950
+      Phase-2HeadAnimation-Sheet_0: 744209399
+      Phase-2HeadAnimation-Sheet_7: 1481953191
+      Phase-2HeadAnimation-Sheet_6: 1657765065
+      Phase-2HeadAnimation-Sheet_10: -2080089762
+      Phase-2HeadAnimation-Sheet_12: 187929920
+      Phase-2HeadAnimation-Sheet_1: 1265243469
+      Phase-2HeadAnimation-Sheet_5: -724569430
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
