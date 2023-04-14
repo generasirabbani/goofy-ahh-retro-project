@@ -140,6 +140,7 @@ public class phaseOne : MonoBehaviour
     public void destroyThis()
     {
         Destroy(gameObject);
+        phaseManager.prePhaseTwo();
     }
 
     public void deactivateMask()
@@ -150,10 +151,5 @@ public class phaseOne : MonoBehaviour
     public void destroyMask()
     {
         anim2.SetTrigger("doDestroy");
-    }
-
-    public void startPhaseTwo()
-    {
-
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class phaseManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class phaseManager : MonoBehaviour
 
     [Header("Bosses")]
     [SerializeField] GameObject phaseOne;
+    [SerializeField] phaseTwo phase2;
 
     [Header("needed collider")]
     [SerializeField] GameObject blockade;
@@ -24,6 +26,14 @@ public class phaseManager : MonoBehaviour
     [SerializeField] GameObject txt1text;
     [SerializeField] GameObject txt2text;
     [SerializeField] GameObject txt3text;
+    [SerializeField] GameObject txt4text;
+
+    [Header("Other")]
+    [SerializeField] Tilemap BG;
+    [SerializeField] AudioSource musika;
+    [SerializeField] AudioClip phaseTwoClip;
+    [SerializeField] GameObject oldGround, newGround;
+    [SerializeField] GameObject platformSpawnerz;
 
     //timer
     float camCounter1;
@@ -102,5 +112,34 @@ public class phaseManager : MonoBehaviour
     void deleteDialogueThree()
     {
         txt3text.SetActive(false);
+    }
+
+    public void prePhaseTwo()
+    {
+        platformSpawnerz.SetActive(true);
+        txt4text.SetActive(true);
+        Invoke("deleteDialogueFour", 3f);
+        setBGColorPhaseTwo();
+        musika.Stop();
+        musika.clip = phaseTwoClip;
+        musika.Play();
+        newGround.SetActive(true);
+        oldGround.SetActive(false);
+        Invoke("startphs2",2f);
+    }
+
+
+    void startphs2()
+    {
+        phase2.startPhaseTwo();
+    }
+    void setBGColorPhaseTwo()
+    {
+        BG.color = new Color(255,0,0,255);
+    }
+
+    void deleteDialogueFour()
+    {
+        txt4text.SetActive(false);
     }
 }
