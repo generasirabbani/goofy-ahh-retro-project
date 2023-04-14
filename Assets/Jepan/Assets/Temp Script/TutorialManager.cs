@@ -81,6 +81,7 @@ public class TutorialManager : MonoBehaviour
     }
     void finishTutorial()
     {
+        PlayerPrefs.SetInt("tutorial", 1);
         Time.timeScale = 0;
         finishPanel.SetActive(true);
     }

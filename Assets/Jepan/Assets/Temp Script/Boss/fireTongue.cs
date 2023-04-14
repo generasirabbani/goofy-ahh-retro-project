@@ -13,6 +13,7 @@ public class fireTongue : MonoBehaviour
     void Start()
     {
         currentXpos = transform.position.x;
+        isMovingRight = true;
     }
 
     // Update is called once per frame

@@ -41425,6 +41425,8 @@ MonoBehaviour:
   invurnerable: 0
   invurnerableTime: 0
   damageAnimationTime: 0.1
+  isBoss: 0
+  isDead: 0
 --- !u!95 &881102557
 Animator:
   serializedVersion: 5
@@ -44283,7 +44285,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -44291,7 +44293,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!1 &2015592011
 GameObject:
   m_ObjectHideFlags: 0

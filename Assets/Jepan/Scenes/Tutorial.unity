@@ -1257,6 +1257,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: changeSceneByName
       objectReference: {fileID: 0}
+    - target: {fileID: 8316630046677050907, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
 --- !u!1 &859601431 stripped
@@ -85195,6 +85199,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 462429124}
+    - target: {fileID: 2856604033601515532, guid: b70eaa5828e98c742bd4c9f51b1e7acc, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70eaa5828e98c742bd4c9f51b1e7acc, type: 3}
 --- !u!224 &1885789100 stripped

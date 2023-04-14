@@ -19,6 +19,8 @@ public class phaseTwo : MonoBehaviour
     [SerializeField] float currentYPos;
     [SerializeField] float attackTimeDelay;
     [SerializeField] GameObject body;
+    [SerializeField] TempEnemyHealth HP;
+    public bool isDead;
     //[SerializeField] Animator anim;
     void Start()
     {
@@ -51,7 +53,12 @@ public class phaseTwo : MonoBehaviour
     void attackRandomizer()
     {
        float atkIndex = Mathf.FloorToInt(Random.Range(0, 2));
-       if (atkIndex == 0)
+        if(HP.currentHealth <= 0 || HP.isDead)
+        {
+            isDead = true;
+            return;
+        }
+       else if (atkIndex == 0)
         {
             Invoke("doSpawnAtk", attackTimeDelay);
         }
@@ -90,4 +97,6 @@ public class phaseTwo : MonoBehaviour
     {
         
     }
+
+    
 }
