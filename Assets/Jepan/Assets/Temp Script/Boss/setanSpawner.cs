@@ -8,6 +8,7 @@ public class setanSpawner : MonoBehaviour
     [SerializeField] Transform spot1,spot2, spot3, spot4;
     [SerializeField] float delayTime;
     [SerializeField] GameObject setan1, setan2;
+    public bool isSpawning;
     void Start()
     {
         startSpawnSetan();
@@ -24,20 +25,36 @@ public class setanSpawner : MonoBehaviour
         int lucky = Mathf.FloorToInt(Random.Range(0, 3));
         if(lucky == 0)
         {
-            Instantiate(setan1, spot1);
+            GameObject obj = Instantiate(setan1, spot1);
+            obj.transform.position = spot1.position;
         }
         else if(lucky == 1)
         {
-            Instantiate(setan1, spot2);
+            GameObject obj = Instantiate(setan1, spot2);
+            obj.transform.position = spot2.position;
         }
         else if(lucky == 2)
         {
-            Instantiate(setan2 , spot3);
+            GameObject obj = Instantiate(setan2 , spot3);
+            obj.transform.position = spot3.position;
         }
         else if(lucky >= 3)
         {
-            Instantiate(setan2,spot4);
+            GameObject obj = Instantiate(setan2,spot4);
+            obj.transform.position = spot4.position;
         }
-        Invoke("startSpawnSetan", delayTime);
+        Invoke("waitForSpawn", delayTime);
+    }
+
+    void waitForSpawn()
+    {
+        if (isSpawning)
+        {
+            Invoke("startSpawnSetan", delayTime);
+        }
+        else
+        {
+            Invoke("waitForSpawn", delayTime);
+        }
     }
 }

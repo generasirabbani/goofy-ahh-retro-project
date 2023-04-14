@@ -7,11 +7,13 @@ public class phaseTwo : MonoBehaviour
     [Header("Attack")]
     [SerializeField] fireBallAttack fireballAtk;
     [SerializeField] GameObject tongueAtk;
-    [SerializeField] GameObject jailangkungSpawner;
+    [SerializeField] setanSpawner jailangkungSpawner;
+    [SerializeField] setanSpawner jelangkungSpawner;
 
     [Header("attack Val")]
     [SerializeField] float fireBallAtkTime;
     [SerializeField] float jailangkungAtkTime;
+    [SerializeField] float jelangkungAtkTime;
     //[SerializeField] GameObject setanSpawner;
 
     float riseCount;
@@ -20,6 +22,7 @@ public class phaseTwo : MonoBehaviour
     [SerializeField] float attackTimeDelay;
     [SerializeField] GameObject body;
     [SerializeField] TempEnemyHealth HP;
+    [SerializeField] phaseManager phaseManager;
     public bool isDead;
     //[SerializeField] Animator anim;
     void Start()
@@ -52,31 +55,46 @@ public class phaseTwo : MonoBehaviour
 
     void attackRandomizer()
     {
-       float atkIndex = Mathf.FloorToInt(Random.Range(0, 2));
+        float maxRange;
+        if(HP.currentHealth > HP.maxHealth / 2)
+        {
+            maxRange = 2f;
+        }
+        else
+        {
+            maxRange = 3f;
+            attackTimeDelay = 0f;
+        }
+       float atkIndex = Mathf.FloorToInt(Random.Range(0, maxRange));
         if(HP.currentHealth <= 0 || HP.isDead)
         {
             isDead = true;
+            phaseManager.finish();
             return;
         }
        else if (atkIndex == 0)
         {
             Invoke("doSpawnAtk", attackTimeDelay);
         }
-       else if (atkIndex >= 1)
+       else if (atkIndex >= 1 && atkIndex <= 2f)
         {
             Invoke("doFireBallAtk", attackTimeDelay);
+        }
+        else if (atkIndex > 2)
+        {
+            Invoke("doJelangkungSpawn", attackTimeDelay);
         }
     }
 
     void doSpawnAtk()
     {
-        jailangkungSpawner.SetActive(true);
+        jailangkungSpawner.isSpawning = true;
         Invoke("turnOffSpawnAtk", jailangkungAtkTime);
     }
 
     void turnOffSpawnAtk()
     {
-        jailangkungSpawner.SetActive(false);
+        jailangkungSpawner.isSpawning = false;
         Invoke("attackRandomizer",attackTimeDelay);
     }
 
@@ -98,5 +116,16 @@ public class phaseTwo : MonoBehaviour
         
     }
 
+    void doJelangkungSpawn()
+    {
+        jailangkungSpawner.isSpawning = true;
+        Invoke("doTurnOffJelangkungSpawn", jelangkungAtkTime);
+    }
+
+    void doTurnOffJelangkungSpawn()
+    {
+        jelangkungSpawner.isSpawning = false;
+        Invoke("attackRandomizer", attackTimeDelay);
+    }
     
 }

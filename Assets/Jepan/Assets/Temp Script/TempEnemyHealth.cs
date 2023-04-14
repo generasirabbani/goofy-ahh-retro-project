@@ -34,7 +34,10 @@ public class TempEnemyHealth : MonoBehaviour
     void damageOnPlayer()
     {
         currentHealth--;
-        animator.SetTrigger("doDamaged");
+        if (!isDead)
+        {
+            animator.SetTrigger("doDamaged");
+        }
         Invoke("exitDamaged",damageAnimationTime);
         //invurnerable = true;
         //Invoke("exitInvurnerable", invurnerableTime);
@@ -72,7 +75,7 @@ public class TempEnemyHealth : MonoBehaviour
         isDead = true;
         if (!isBoss)
         {
-            Destroy(gameObject, 0.25f);
+            Destroy(gameObject, 0.5f);
         }
         //deadPanel.SetActive(true);
     }

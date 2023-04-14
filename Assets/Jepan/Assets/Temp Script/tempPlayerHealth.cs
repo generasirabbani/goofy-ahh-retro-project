@@ -23,7 +23,7 @@ public class tempPlayerHealth : MonoBehaviour
     void Update()
     {
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        if(currentHealth == 0)
+        if(currentHealth <= 0)
         {
             dead();
         }
@@ -72,8 +72,8 @@ public class tempPlayerHealth : MonoBehaviour
     }
     void dead()
     {
-        Destroy(gameObject);
-        Time.timeScale = 0;
+        //Destroy(gameObject);
         deadPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }

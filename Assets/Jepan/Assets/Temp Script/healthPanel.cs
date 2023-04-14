@@ -6,9 +6,7 @@ using UnityEngine.UI;
 public class healthPanel : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Image Bar1;
-    public Image Bar2;
-    public Image Bar3;
+    public Image[] Bar;
 
     public Sprite empty;
     public Sprite fill;
@@ -22,29 +20,13 @@ public class healthPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(player.currentHealth == 3)
+        for(int i = 0; i < player.currentHealth; i++)
         {
-            Bar1.sprite = fill;
-            Bar2.sprite = fill;
-            Bar3.sprite = fill;
+            Bar[i].sprite = fill;
         }
-        if (player.currentHealth == 2)
+        for(int i = player.currentHealth; i < player.maxHealth; i++)
         {
-            Bar1.sprite = fill;
-            Bar2.sprite = fill;
-            Bar3.sprite = empty;
-        }
-        if (player.currentHealth == 1)
-        {
-            Bar1.sprite = fill;
-            Bar2.sprite = empty;
-            Bar3.sprite = empty;
-        }
-        if(player.currentHealth == 0)
-        {
-            Bar1.sprite = empty;
-            Bar2.sprite = empty;
-            Bar3.sprite = empty;
+            Bar[i].sprite = empty;
         }
     }
 }

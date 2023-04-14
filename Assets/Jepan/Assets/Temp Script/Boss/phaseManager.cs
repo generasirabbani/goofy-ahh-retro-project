@@ -27,6 +27,7 @@ public class phaseManager : MonoBehaviour
     [SerializeField] GameObject txt2text;
     [SerializeField] GameObject txt3text;
     [SerializeField] GameObject txt4text;
+    [SerializeField] GameObject finishPanel;
 
     [Header("Other")]
     [SerializeField] Tilemap BG;
@@ -34,6 +35,7 @@ public class phaseManager : MonoBehaviour
     [SerializeField] AudioClip phaseTwoClip;
     [SerializeField] GameObject oldGround, newGround;
     [SerializeField] GameObject platformSpawnerz;
+    [SerializeField] AstarPath path;
 
     //timer
     float camCounter1;
@@ -126,6 +128,7 @@ public class phaseManager : MonoBehaviour
         newGround.SetActive(true);
         oldGround.SetActive(false);
         Invoke("startphs2",2f);
+        path.Scan();
     }
 
 
@@ -141,5 +144,12 @@ public class phaseManager : MonoBehaviour
     void deleteDialogueFour()
     {
         txt4text.SetActive(false);
+    }
+
+    public void finish()
+    {
+        Time.timeScale = 0;
+        finishPanel.SetActive(true);
+        PlayerPrefs.SetInt("chapt3", 1);
     }
 }

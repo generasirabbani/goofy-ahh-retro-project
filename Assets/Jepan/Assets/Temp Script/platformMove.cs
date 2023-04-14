@@ -7,16 +7,18 @@ public class platformMove : MonoBehaviour
     // Start is called before the first frame update
     float currentY, lifecount;
     [SerializeField] float speed,lifetime;
+    Rigidbody2D rb;
     void Start()
     {
-        currentY = transform.position.y;
+        rb = GetComponent<Rigidbody2D>();
+        //currentY = transform.position.y;
         lifecount = lifetime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, currentY, transform.position.z);
+        //transform.position = new Vector3(transform.position.x, currentY, transform.position.z);
         lifecount -= Time.deltaTime;
         move();
         if(lifecount <= 0)
@@ -27,6 +29,7 @@ public class platformMove : MonoBehaviour
 
     void move()
     {
-        currentY -= speed * Time.deltaTime;
+        rb.velocity = new Vector2(0,-speed);
+        //currentY -= speed * Time.deltaTime;
     }
 }
