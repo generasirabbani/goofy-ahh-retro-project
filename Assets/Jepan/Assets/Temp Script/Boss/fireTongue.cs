@@ -9,6 +9,7 @@ public class fireTongue : MonoBehaviour
     [SerializeField] float minX;
     [SerializeField] float maxX;
     [SerializeField] float speed;
+    bool isMovingLeft,isMovingRight;
     void Start()
     {
         currentXpos = transform.position.x;
@@ -19,17 +20,27 @@ public class fireTongue : MonoBehaviour
     {
         doAttack();
         transform.position = new Vector3 (currentXpos, transform.position.y, transform.position.z);
+        if (isMovingRight)
+        {
+            right();
+        }
+        if (isMovingLeft)
+        {
+            left();
+        }
     }
 
     void doAttack()
     {
         if (transform.position.x <= minX)
         {
-            right();
+            isMovingLeft = false;
+            isMovingRight = true;
         }
-        else
+        else if (transform.position.x >= maxX)
         {
-            left();
+            isMovingRight = false;
+            isMovingLeft=true;
         }
     }
 
