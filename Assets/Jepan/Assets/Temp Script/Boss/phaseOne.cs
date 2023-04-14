@@ -8,6 +8,7 @@ public class phaseOne : MonoBehaviour
     [Header("attackScript")]
     [SerializeField] TongueAttack tongueAtk;
     [SerializeField] Animator handAtk;
+    [SerializeField] fireBallAttack fireballAtk;
 
 
     [Header("attack Addons")]
@@ -17,26 +18,36 @@ public class phaseOne : MonoBehaviour
     [SerializeField] float attackTimeDelay = 5f;
     [SerializeField] float tongueAtkTime = 15f;
     [SerializeField] float handAtkTime = 15f;
+    [SerializeField] float fireballAtkTime = 8f;
 
     //other
+    [SerializeField] TempEnemyHealth HP;
     [SerializeField] float toungeIndicatorTime;
     float toungeIndicatorCount;
     float toungeIndicatorCount2;
     float currentYScale;
+    float fallCount;
+    float currentYpos;
+    Animator anim;
+    [SerializeField] Animator anim2;
     [SerializeField] int atkIndex;
+    [SerializeField] GameObject mask;
+    [SerializeField] phaseManager phaseManager;
 
     public bool isDead;
     void Start()
     {
         drawAttackByRandomizer1();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        fallCount -= Time.deltaTime;
         toungeIndicatorCount -= Time.deltaTime;
         toungeIndicatorCount2 -= Time.deltaTime;
-        currentYScale = Mathf.Clamp(currentYScale, 0, 1);
+        currentYScale = Mathf.Clamp(currentYScale, 0, 1.5f);
        toungeIndicatorCount -= Time.deltaTime;
         tongueAtkIndicator.transform.localScale = new Vector3(tongueAtkIndicator.transform.localScale.x,currentYScale,tongueAtkIndicator.transform.localScale.z);
     }
@@ -51,12 +62,17 @@ public class phaseOne : MonoBehaviour
         {
             rollinTongue();
         }
+        transform.position = new Vector3(transform.position.x, currentYpos, transform.position.z);
     }
 
     void drawAttackByRandomizer1()
     {
         atkIndex = Mathf.FloorToInt(Random.Range(0, 3));
-        if(atkIndex == 0)
+        if (HP.isDead)
+        {
+            doDeath();
+        }
+        else if(atkIndex == 0)
         {
             Invoke("doHandAtk", attackTimeDelay);
         }
@@ -66,7 +82,7 @@ public class phaseOne : MonoBehaviour
         }
         else if(atkIndex >= 2)
         {
-            Invoke("drawAttackByRandomizer1",attackTimeDelay);
+            Invoke("doFireBallAtk",attackTimeDelay);
         }
         
     }
@@ -97,12 +113,47 @@ public class phaseOne : MonoBehaviour
 
     void rolloutTongue()
     {
-        currentYScale += Time.deltaTime;
+        currentYScale += Time.deltaTime*2;
     }
 
     void rollinTongue()
     {
-        currentYScale -= Time.deltaTime;
+        currentYScale -= Time.deltaTime*2;
     }
 
+    void doFireBallAtk()
+    {
+        fireballAtk.doFireBallAttack();
+        Invoke("drawAttackByRandomizer1", fireballAtkTime);
+    }
+
+    void doDeath()
+    {
+        anim.SetTrigger("doDeath");
+    }
+
+    public void doFall()
+    {
+        anim.SetTrigger("doFall");
+    }
+
+    public void destroyThis()
+    {
+        Destroy(gameObject);
+    }
+
+    public void deactivateMask()
+    {
+        mask.SetActive(false);
+    }
+
+    public void destroyMask()
+    {
+        anim2.SetTrigger("doDestroy");
+    }
+
+    public void startPhaseTwo()
+    {
+
+    }
 }

@@ -8,11 +8,28 @@ public class phaseManager : MonoBehaviour
     public GameObject player;
     public Camera camsie;
 
+    [Header("needed Detector")]
+    [SerializeField] playerDetector txt1;
+    [SerializeField] playerDetector txt2;
+    [SerializeField] playerDetector txt3;
+
+    [Header("Bosses")]
+    [SerializeField] GameObject phaseOne;
+
+    [Header("needed collider")]
+    [SerializeField] GameObject blockade;
+
+
+    [Header("needed Canvas Object")]
+    [SerializeField] GameObject txt1text;
+    [SerializeField] GameObject txt2text;
+    [SerializeField] GameObject txt3text;
+
     //timer
     float camCounter1;
     void Start()
     {
-        beginPhaseOne();
+        //beginPhaseOne();
     }
 
     // Update is called once per frame
@@ -20,6 +37,21 @@ public class phaseManager : MonoBehaviour
     {
         camCounter1 -= Time.deltaTime;
         camsie.orthographicSize = Mathf.Clamp(camsie.orthographicSize, 5, 6.5f);
+
+        if (txt1.playerIsHere)
+        {
+            preDialogueOne();
+        }
+
+        if (txt2.playerIsHere)
+        {
+            preDialogueTwo();
+        }
+
+        if (txt3.playerIsHere)
+        {
+            beginPhaseOne();
+        }
     }
 
     private void FixedUpdate()
@@ -30,7 +62,45 @@ public class phaseManager : MonoBehaviour
         }
     }
 
-    void beginPhaseOne(){
+    void preDialogueOne()
+    {
+        txt1.gameObject.SetActive(false);
+        txt1text.SetActive(true);
+        Invoke("deleteDialogueOne", 3f);
+    }
+
+    void deleteDialogueOne()
+    {
+        txt1text.SetActive(false);
+    }
+
+    void preDialogueTwo()
+    {
+        txt1text.SetActive(false);
+        txt2.gameObject.SetActive(false);
+        txt2text.SetActive(true);
+        Invoke("deleteDialogueTwo", 3f);
+    }
+
+    void deleteDialogueTwo()
+    {
+        txt2text.SetActive(false);
+    }
+
+    void beginPhaseOne()
+    {
+        txt3.gameObject.SetActive(false);
+        txt1text.SetActive(false);
+        txt2text.SetActive(false);
+        phaseOne.SetActive(true);
+        txt3text.SetActive(true);
+        blockade.SetActive(true);
         camCounter1 = 2;
+        Invoke("deleteDialogueThree", 3f);
+    }
+    
+    void deleteDialogueThree()
+    {
+        txt3text.SetActive(false);
     }
 }

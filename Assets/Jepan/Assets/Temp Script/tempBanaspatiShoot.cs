@@ -13,6 +13,10 @@ public class tempBanaspatiShoot : MonoBehaviour
     public float attackTime = 0.2f;
 
     bool isShooting;
+    bool hasShoot;
+    bool isPressed;
+    float pressDelay = 0.5f;
+    float pressCount = 0f;
     void Start()
     {
         
@@ -21,35 +25,37 @@ public class tempBanaspatiShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        pressCount -= Time.deltaTime;
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         float rota = Mathf.Atan2((mousePos.y - transform.position.y), (mousePos.x - transform.position.x)) * Mathf.Rad2Deg;
         var q = Quaternion.Euler(0, 0, rota);
         Vector3 angle = q.eulerAngles;
-        if (Input.GetMouseButtonDown(0))
+        isShooting = Input.GetMouseButton(0);
+        if (pressCount < 0 && Input.GetMouseButtonDown(0))
         {
-            isShooting = true;
-            StartCoroutine(Shoot(angle));
+            pressCount = 1f;
+            Shoot();
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            isShooting = false;
-        }
-        //if (isShooting)
-        //{
-            
-        //}
     }
 
-    private IEnumerator Shoot(Vector3 angle)
+    private void FixedUpdate()
     {
-        yield return new WaitForSeconds(attackTime);
+        
+    }
+
+    void exitShooting()
+    {
+        isPressed = false;
+    }
+
+    private void Shoot()
+    {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation.normalized);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * bulletForce, ForceMode2D.Impulse);
         if (isShooting)
         {
-            StartCoroutine(Shoot(angle));
+            Invoke("Shoot", attackTime);
         }
-        //animator.SetTrigger("Punch");
     }
 }

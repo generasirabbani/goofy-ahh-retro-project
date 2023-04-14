@@ -12,6 +12,8 @@ public class TempEnemyHealth : MonoBehaviour
     //public GameObject deadPanel;
     [SerializeField] float invurnerableTime = 0f;
     [SerializeField] float damageAnimationTime = 0.3f;
+    [SerializeField] bool isBoss = false;
+    public bool isDead;
     Animator animator;
     void Start()
     {
@@ -67,7 +69,11 @@ public class TempEnemyHealth : MonoBehaviour
 
     void dead()
     {
-        Destroy(gameObject, 0.25f);
+        isDead = true;
+        if (!isBoss)
+        {
+            Destroy(gameObject, 0.25f);
+        }
         //deadPanel.SetActive(true);
     }
 }
