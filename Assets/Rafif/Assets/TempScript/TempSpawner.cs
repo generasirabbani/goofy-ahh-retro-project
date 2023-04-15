@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TempSpawner : MonoBehaviour
 {
-    private Transform location;
+    public Transform spot;
 
     [SerializeField]
     private GameObject enemyPrefab;
@@ -16,14 +16,12 @@ public class TempSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnEnemy(swarmerInterval, enemyPrefab));
-        location = this.transform;
     }
 
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(location.position.x, 
-            location.position.y + 2f, location.position.z), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, spot.position, Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 
