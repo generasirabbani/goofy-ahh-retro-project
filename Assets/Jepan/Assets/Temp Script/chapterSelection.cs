@@ -29,7 +29,7 @@ public class chapterSelection : MonoBehaviour
     void onDisplayingButton()
     {
         chapterButton[0].interactable = true;
-        for (int i = 0; i < chapterButton.Length; i++)
+        for (int i = 0; i < chapterButton.Length-1; i++)
         {
             if(chapter[i] > 0)
             {

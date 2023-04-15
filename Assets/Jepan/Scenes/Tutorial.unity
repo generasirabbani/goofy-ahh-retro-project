@@ -83442,6 +83442,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd38c74ecfbb3ee4d80e3e4bbcdea104, type: 3}
+--- !u!1 &1149886507
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149886508}
+  - component: {fileID: 1149886509}
+  m_Layer: 14
+  m_Name: pproc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149886508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149886507}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.855487, y: 1.5406826, z: 0.0025438191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1149886509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149886507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 1e19f47513ea08a41a8855b24e9759f7, type: 2}
 --- !u!4 &1167889926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8507880127804792543, guid: fd38c74ecfbb3ee4d80e3e4bbcdea104, type: 3}
@@ -83804,6 +83853,14 @@ PrefabInstance:
     - target: {fileID: 1230583575167955967, guid: 23f98f8c7f7eafc4487e493ce116b187, type: 3}
       propertyPath: smoothFactor
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3656908835412801407, guid: 23f98f8c7f7eafc4487e493ce116b187, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3656908835412801407, guid: 23f98f8c7f7eafc4487e493ce116b187, type: 3}
+      propertyPath: m_VolumeLayerMask.m_Bits
+      value: 16385
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23f98f8c7f7eafc4487e493ce116b187, type: 3}
@@ -84986,11 +85043,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6836206608362377052, guid: fdf028c698efdc341a2fc561bcc9b170, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 728c5b0a8256764458374d3e3728d83f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 08225de2c63d5514f86c5a4950259192, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Pitch: 0.75
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -85191,6 +85248,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1835520685}
+    - target: {fileID: 2856604033013060358, guid: b70eaa5828e98c742bd4c9f51b1e7acc, type: 3}
+      propertyPath: m_PixelPerfect
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2856604033013060361, guid: b70eaa5828e98c742bd4c9f51b1e7acc, type: 3}
       propertyPath: m_Name
       value: Canvas

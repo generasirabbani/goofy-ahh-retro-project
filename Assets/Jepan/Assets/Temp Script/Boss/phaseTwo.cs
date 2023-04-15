@@ -23,6 +23,9 @@ public class phaseTwo : MonoBehaviour
     [SerializeField] GameObject body;
     [SerializeField] TempEnemyHealth HP;
     [SerializeField] phaseManager phaseManager;
+    [SerializeField] GameObject hand1;
+    [SerializeField] GameObject hand2;
+
     public bool isDead;
     //[SerializeField] Animator anim;
     void Start()
@@ -50,20 +53,22 @@ public class phaseTwo : MonoBehaviour
     public void startAtk()
     {
         tongueAtk.SetActive(true);
+        jailangkungSpawner.startSpawnSetan();
+        jelangkungSpawner.startSpawnSetan();
         attackRandomizer();
     }
 
     void attackRandomizer()
     {
         float maxRange;
-        if(HP.currentHealth > HP.maxHealth / 2)
+        if(HP.currentHealth < HP.maxHealth / 2)
         {
-            maxRange = 2f;
+            maxRange = 3f;
+            attackTimeDelay = 0;
         }
         else
         {
-            maxRange = 3f;
-            attackTimeDelay = 0f;
+            maxRange = 2f;
         }
        float atkIndex = Mathf.FloorToInt(Random.Range(0, maxRange));
         if(HP.currentHealth <= 0 || HP.isDead)
@@ -108,6 +113,8 @@ public class phaseTwo : MonoBehaviour
     {
         Raise();
         body.SetActive(true);
+        hand1.SetActive(true);
+        hand2.SetActive(true);
         Invoke("startAtk",riseTime);
     }
 

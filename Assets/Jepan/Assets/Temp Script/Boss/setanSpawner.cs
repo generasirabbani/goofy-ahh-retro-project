@@ -11,7 +11,7 @@ public class setanSpawner : MonoBehaviour
     public bool isSpawning;
     void Start()
     {
-        startSpawnSetan();
+        //startSpawnSetan();
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class setanSpawner : MonoBehaviour
         
     }
 
-    void startSpawnSetan()
+    public void startSpawnSetan()
     {
         int lucky = Mathf.FloorToInt(Random.Range(0, 3));
         if(lucky == 0)

@@ -76,8 +76,8 @@ public class phaseManager : MonoBehaviour
 
     void preDialogueOne()
     {
-        txt1.gameObject.SetActive(false);
         txt1text.SetActive(true);
+        txt1.gameObject.SetActive(false);
         Invoke("deleteDialogueOne", 3f);
     }
 
@@ -89,8 +89,8 @@ public class phaseManager : MonoBehaviour
     void preDialogueTwo()
     {
         txt1text.SetActive(false);
-        txt2.gameObject.SetActive(false);
         txt2text.SetActive(true);
+        txt2.gameObject.SetActive(false);
         Invoke("deleteDialogueTwo", 3f);
     }
 
