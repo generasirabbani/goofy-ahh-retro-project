@@ -15,10 +15,12 @@ public class TempEnemyHealth : MonoBehaviour
     [SerializeField] bool isBoss = false;
     public bool isDead;
     Animator animator;
+    ParticleSystem ps;
     void Start()
     {
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
+        ps = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -73,9 +75,13 @@ public class TempEnemyHealth : MonoBehaviour
     void dead()
     {
         isDead = true;
+        if(ps!= null)
+        {
+            ps.Play();
+        }
         if (!isBoss)
         {
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 0.75f);
         }
         //deadPanel.SetActive(true);
     }
