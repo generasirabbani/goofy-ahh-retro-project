@@ -81,7 +81,7 @@ public class TempEnemyHealth : MonoBehaviour
         }
         if (!isBoss)
         {
-            Destroy(gameObject, 0.75f);
+            Destroy(gameObject, 1f);
         }
         //deadPanel.SetActive(true);
     }
