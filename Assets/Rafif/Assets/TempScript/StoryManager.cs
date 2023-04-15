@@ -9,6 +9,8 @@ public class StoryManager : MonoBehaviour
     [SerializeField] playerDetector detector2;
     [SerializeField] playerDetector detector3;
     [SerializeField] playerDetector detector4;
+    [SerializeField] playerDetector detector5;
+    [SerializeField] playerDetector detector6;
 
     [Header("Canvas Object")]
     [SerializeField] GameObject text1;
@@ -19,9 +21,11 @@ public class StoryManager : MonoBehaviour
     [SerializeField] GameObject text6;
     [SerializeField] GameObject text7;
     [SerializeField] GameObject text8;
+    [SerializeField] GameObject text9;
     [SerializeField] GameObject story1;
     [SerializeField] GameObject story2;
     [SerializeField] GameObject story3;
+    [SerializeField] GameObject finishPanel;
 
     [Header("Spawner")]
     [SerializeField] GameObject miniBoss1;
@@ -77,6 +81,24 @@ public class StoryManager : MonoBehaviour
         {
             finishPhase2();
         }
+        if (detector4.playerIsHere)
+        {
+            text7.SetActive(true);
+            StartCoroutine(deleteText(text7));
+            Destroy(detector4.gameObject);
+        }
+        if (detector5.playerIsHere)
+        {
+            triggerPhase3();
+        }
+        if (miniBoss3Hp.isDead && !phaseThree)
+        {
+            finishPhase3();
+        }
+        if (detector6.playerIsHere)
+        {
+            finishStage();
+        }
     }
 
     private void FixedUpdate()
@@ -115,9 +137,34 @@ public class StoryManager : MonoBehaviour
     {
         blockade2.SetActive(false);
         text6.SetActive(true);
-        Destroy(text3, 3f);
+        Destroy(text6, 3f);
         phaseTwo = true;
     }
+
+    void triggerPhase3()
+    {
+        Destroy(detector5.gameObject);
+        text8.SetActive(true);
+        miniBoss3.SetActive(true);
+        story3.SetActive(true);
+        StartCoroutine(deleteText(text8));
+        StartCoroutine(deleteText(story3));
+    }
+    void finishPhase3()
+    {
+        blockade3.SetActive(false);
+        text9.SetActive(true);
+        Destroy(text9, 3f);
+        phaseThree = true;
+    }
+
+    void finishStage()
+    {
+        PlayerPrefs.SetInt("chapt1",1);
+        finishPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     private IEnumerator deleteText(GameObject text)
     {
         yield return new WaitForSeconds(3f);

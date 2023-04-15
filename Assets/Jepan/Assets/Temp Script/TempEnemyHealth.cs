@@ -16,6 +16,7 @@ public class TempEnemyHealth : MonoBehaviour
     public bool isDead;
     Animator animator;
     ParticleSystem ps;
+    public bool punyaOrtu;
     void Start()
     {
         currentHealth = maxHealth;
@@ -79,9 +80,15 @@ public class TempEnemyHealth : MonoBehaviour
         {
             ps.Play();
         }
-        if (!isBoss)
+        if (!isBoss && punyaOrtu)
         {
-            Destroy(gameObject, 1f);
+            ps.Play();
+            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
+        }
+        if (!isBoss && !punyaOrtu)
+        {
+            Destroy(gameObject, 0.5f);
         }
         //deadPanel.SetActive(true);
     }

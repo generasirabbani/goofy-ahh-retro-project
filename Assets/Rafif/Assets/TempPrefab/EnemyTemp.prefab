@@ -135,13 +135,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95d87bd90185724a8c87013c477d751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 5
   currentHealth: 0
   invurnerable: 0
   invurnerableTime: 0
   damageAnimationTime: 0.1
   isBoss: 0
   isDead: 0
+  punyaOrtu: 1
 --- !u!61 &6514504449464398314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -185,7 +186,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
