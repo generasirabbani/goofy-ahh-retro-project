@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Jepan/Scenes/Tutorial.unity
     guid: 6333758db9f442541ae73678462b921b
+  - enabled: 1
+    path: Assets/Rafif/Scenes/Stage1.unity
+    guid: fc05cc7663af1184097fd6bcaf609610
+  - enabled: 1
+    path: Assets/Rafif/Scenes/wave-stage.unity
+    guid: eb3f460f7a0f9cb4ea659c39df1cc685
+  - enabled: 1
+    path: Assets/Jepan/Scenes/Boss.unity
+    guid: 3496425e34291724c83a14bd08e5769f
   m_configObjects: {}

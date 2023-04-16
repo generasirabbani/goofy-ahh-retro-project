@@ -57,4 +57,20 @@ public class menuManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
     }
+
+    public void cheat()
+    {
+        PlayerPrefs.SetInt("tutorial",1);
+        PlayerPrefs.SetInt("chapt1",1);
+        PlayerPrefs.SetInt("chapt2",1);
+        PlayerPrefs.SetInt("chapt3",1);
+    }
+
+    public void resetProgress()
+    {
+        PlayerPrefs.SetInt("tutorial", 0);
+        PlayerPrefs.SetInt("chapt1", 0);
+        PlayerPrefs.SetInt("chapt2", 0);
+        PlayerPrefs.SetInt("chapt3", 0);
+    }
 }

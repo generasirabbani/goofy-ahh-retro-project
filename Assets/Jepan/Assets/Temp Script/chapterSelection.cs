@@ -35,6 +35,10 @@ public class chapterSelection : MonoBehaviour
             {
                 chapterButton[i + 1].interactable = true;
             }
+            else if(chapter[i] == 0)
+            {
+                chapterButton[i + 1].interactable = false;
+            }
         }
     }
 }
