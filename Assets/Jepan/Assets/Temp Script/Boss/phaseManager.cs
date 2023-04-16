@@ -42,6 +42,7 @@ public class phaseManager : MonoBehaviour
     void Start()
     {
         //beginPhaseOne();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -148,8 +149,13 @@ public class phaseManager : MonoBehaviour
 
     public void finish()
     {
-        Time.timeScale = 0;
+        
         finishPanel.SetActive(true);
         PlayerPrefs.SetInt("chapt3", 1);
+        if(PlayerPrefs.GetInt("cheated",0) == 0)
+        {
+            PlayerPrefs.SetInt("king", 1);
+        }
+        Time.timeScale = 0;
     }
 }

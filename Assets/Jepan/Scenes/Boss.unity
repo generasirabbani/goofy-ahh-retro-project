@@ -22952,6 +22952,7 @@ MonoBehaviour:
   damageAnimationTime: 0.3
   isBoss: 1
   isDead: 0
+  punyaOrtu: 0
 --- !u!1001 &1713577119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24566,6 +24567,7 @@ MonoBehaviour:
   damageAnimationTime: 0.1
   isBoss: 1
   isDead: 0
+  punyaOrtu: 0
 --- !u!95 &1887061774
 Animator:
   serializedVersion: 5
@@ -70437,6 +70439,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 547893026}
+    - target: {fileID: 784920654338967450, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 784920654496523765, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_text
       value: Hard?

@@ -10,8 +10,16 @@ public class oneWayFireSpitter : MonoBehaviour
     public GameObject bulletPrefab;
     public float force;
     public float attackTime;
+    public GameObject indicator;
+    public AudioSource audioIndicator;
+    AudioSource checkIndicator;
     void Start()
     {
+        checkIndicator = GetComponent<AudioSource>();
+        if(checkIndicator != null)
+        {
+            audioIndicator = checkIndicator;
+        }
         WaitForShoot();
     }
 
@@ -32,12 +40,25 @@ public class oneWayFireSpitter : MonoBehaviour
     {
         if (nearMiniBossEnabled)
         {
-            shoot();
+            prepareShoot();
         }
         else
         {
             Invoke("WaitForShoot", attackTime);
         }
+    }
+
+    void prepareShoot()
+    {
+        audioIndicator.Play();
+        indicator.SetActive(true);
+        Invoke("deleteIndicator", 3f);
+        Invoke("shoot", 0.5f);
+    }
+
+    void deleteIndicator()
+    {
+        indicator.SetActive(false);
     }
 
     void shoot()

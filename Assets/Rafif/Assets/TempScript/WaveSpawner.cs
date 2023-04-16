@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class WaveSpawner : MonoBehaviour
     public class Wave
     {
         public string name;
-        public Transform enemy;
+        public Transform[] enemy;
         public int count;
         public float rate;
 
@@ -30,6 +32,10 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+
+    public TextMeshProUGUI waveText;
+    public GameObject fireBallShooter1;
+    public GameObject fireBallShooter2;
 
     private void Start()
     {
@@ -74,7 +80,7 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave Completed!");
-
+        waveText.text = "";
         state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
 
@@ -82,6 +88,8 @@ public class WaveSpawner : MonoBehaviour
         {
             allWaveCompleted = true;
             Debug.Log("All waves completed.");
+            fireBallShooter1.SetActive(false);
+            fireBallShooter2.SetActive(false);
         }
         else
         {
@@ -107,7 +115,18 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave _wave)
     {
         Debug.Log("Spawning wave: " + _wave.name);
+        waveText.text = _wave.name;
         state = SpawnState.SPAWNING;
+
+        if(nextWave == 1)
+        {
+            fireBallShooter1.SetActive(true);
+        }
+        
+        if(nextWave == 2)
+        {
+            fireBallShooter2.SetActive(true);
+        }
 
         for(int i=0; i<_wave.count; i++)
         {
@@ -120,10 +139,11 @@ public class WaveSpawner : MonoBehaviour
         yield break;
     }
 
-    void SpawnEnemy(Transform _enemy)
+    void SpawnEnemy(Transform[] _enemy)
     {
-        Debug.Log("Spawning enemy: " + _enemy.name);
+        Transform _enmy = _enemy[Random.Range(0, _enemy.Length)];
+        Debug.Log("Spawning enemy: " + _enmy.name);
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        Instantiate(_enmy, _sp.position, _sp.rotation);
     }
 }

@@ -20,7 +20,7 @@ public class menuManager : MonoBehaviour
         {
             Pause();
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        else if(Input.GetKeyDown(KeyCode.Escape) && isPaused && pauseMenu.activeInHierarchy)
         {
             Resume();
         }
@@ -64,10 +64,12 @@ public class menuManager : MonoBehaviour
         PlayerPrefs.SetInt("chapt1",1);
         PlayerPrefs.SetInt("chapt2",1);
         PlayerPrefs.SetInt("chapt3",1);
+        PlayerPrefs.SetInt("cheated", 1);
     }
 
     public void resetProgress()
     {
+        PlayerPrefs.SetInt("cheated", 0);
         PlayerPrefs.SetInt("tutorial", 0);
         PlayerPrefs.SetInt("chapt1", 0);
         PlayerPrefs.SetInt("chapt2", 0);

@@ -1249,6 +1249,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: finishPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1885789101}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: changeSceneByName
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: menuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8316630046677050907, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
