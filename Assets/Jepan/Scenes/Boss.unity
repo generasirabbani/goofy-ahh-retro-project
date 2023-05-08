@@ -22945,7 +22945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95d87bd90185724a8c87013c477d751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 500
   currentHealth: 0
   invurnerable: 0
   invurnerableTime: 0
@@ -24560,7 +24560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95d87bd90185724a8c87013c477d751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 500
   currentHealth: 0
   invurnerable: 0
   invurnerableTime: 0
@@ -70445,7 +70445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 784920654496523765, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_text
-      value: Hard?
+      value: giving up?
       objectReference: {fileID: 0}
     - target: {fileID: 3260653506338952339, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_AnchoredPosition.x

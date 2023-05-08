@@ -160,8 +160,8 @@ public class StoryManager : MonoBehaviour
 
     void finishStage()
     {
-        PlayerPrefs.SetInt("chapt1",1);
         finishPanel.SetActive(true);
+        PlayerPrefs.SetInt("chapt1",1);
         Time.timeScale = 0;
     }
 
