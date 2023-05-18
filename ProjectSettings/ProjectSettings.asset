@@ -15,7 +15,7 @@ PlayerSettings:
   companyName: Goofy Ahh Team
   productName: Puaka
   defaultCursor: {fileID: 2800000, guid: c28b192a5815ceb4cafab3e9c4e439f0, type: 3}
-  cursorHotspot: {x: 0, y: 0}
+  cursorHotspot: {x: 8, y: 8}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
