@@ -8,9 +8,12 @@ public class menuManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] GameObject pauseMenu;
     [SerializeField] bool isPaused;
+    TempPlayerMovementNew player;
     void Start()
     {
-        
+        Time.timeScale = 1f;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<TempPlayerMovementNew>();
+        player.enabled = true;
     }
 
     // Update is called once per frame
@@ -39,13 +42,15 @@ public class menuManager : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0.0f;
+        Time.timeScale = 0;
+        player.enabled = false;
         pauseMenu.SetActive(true);
         isPaused = true;
     }
 
     public void Resume()
     {
+        player.enabled = true;
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
         isPaused = false;
@@ -53,6 +58,7 @@ public class menuManager : MonoBehaviour
 
     public void Restart()
     {
+        player.enabled = true;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1f;
