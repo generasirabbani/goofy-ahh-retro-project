@@ -7468,6 +7468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 547893024}
   camsie: {fileID: 61671240}
+  menu: {fileID: 3260653506569209766}
   txt1: {fileID: 1175420922}
   txt2: {fileID: 1957539523}
   txt3: {fileID: 1586265976}
@@ -70489,11 +70490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785431365644915065, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6785431365644915065, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6785431365644915065, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_LocalRotation.x
@@ -70521,3 +70522,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
+--- !u!114 &3260653506569209766 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 784920653646173322, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
+  m_PrefabInstance: {fileID: 3260653506569209765}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59ef2bcf3930245880483e9e4011ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

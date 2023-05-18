@@ -8,6 +8,7 @@ public class phaseManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public Camera camsie;
+    public menuManager menu;
 
     [Header("needed Detector")]
     [SerializeField] playerDetector txt1;
@@ -149,7 +150,7 @@ public class phaseManager : MonoBehaviour
 
     public void finish()
     {
-        
+        menu.isFinished = true;   
         finishPanel.SetActive(true);
         PlayerPrefs.SetInt("chapt3", 1);
         if(PlayerPrefs.GetInt("cheated",0) == 0)

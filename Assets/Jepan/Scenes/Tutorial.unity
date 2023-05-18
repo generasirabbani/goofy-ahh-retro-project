@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: finishPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 8316630046177357242, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8316630046502842078, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

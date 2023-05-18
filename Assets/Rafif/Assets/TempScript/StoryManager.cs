@@ -47,6 +47,7 @@ public class StoryManager : MonoBehaviour
     [SerializeField] bool phaseTwo;
     [SerializeField] bool phaseThree;
 
+    [SerializeField] menuManager menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -160,6 +161,7 @@ public class StoryManager : MonoBehaviour
 
     void finishStage()
     {
+        menu.isFinished = true;
         finishPanel.SetActive(true);
         PlayerPrefs.SetInt("chapt1",1);
         Time.timeScale = 0;

@@ -45118,11 +45118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6785431365644915065, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6785431365644915065, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6785431365644915065, guid: f1aa2db377ea28e47b21288d80a2fc20, type: 3}
       propertyPath: m_LocalRotation.x
@@ -45700,6 +45700,7 @@ MonoBehaviour:
   - {fileID: 1156985633}
   - {fileID: 149904438}
   camsie: {fileID: 133513153}
+  menu: {fileID: 1995761517}
 --- !u!1 &1689065080
 GameObject:
   m_ObjectHideFlags: 0

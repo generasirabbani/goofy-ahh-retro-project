@@ -65098,11 +65098,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8316630046177357241, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 100
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 8316630046177357241, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8316630046177357241, guid: 54d8baa82cdc4994fb8303acec970468, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67961,6 +67961,7 @@ MonoBehaviour:
   phaseOne: 0
   phaseTwo: 0
   phaseThree: 0
+  menu: {fileID: 1168031308}
 --- !u!4 &1300795885
 Transform:
   m_ObjectHideFlags: 0

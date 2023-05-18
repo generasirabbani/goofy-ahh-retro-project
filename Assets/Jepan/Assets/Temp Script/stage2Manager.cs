@@ -13,6 +13,7 @@ public class stage2Manager : MonoBehaviour
     public Camera camsie;
     float camCounter1;
     bool finished;
+    [SerializeField] menuManager menu;
     void Start()
     {
         Time.timeScale = 1;
@@ -78,6 +79,7 @@ public class stage2Manager : MonoBehaviour
 
     void finish()
     {
+        menu.isFinished = true;
         PlayerPrefs.SetInt("chapt2", 1);
         canvasObjects[1].SetActive(true);
         Time.timeScale = 0;

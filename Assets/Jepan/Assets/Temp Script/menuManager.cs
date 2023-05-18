@@ -8,9 +8,11 @@ public class menuManager : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] GameObject pauseMenu;
     [SerializeField] bool isPaused;
+    public bool isFinished;
     TempPlayerMovementNew player;
     void Start()
     {
+        isFinished = false;
         Time.timeScale = 1f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<TempPlayerMovementNew>();
         player.enabled = true;
@@ -19,11 +21,11 @@ public class menuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused && !isFinished)
         {
             Pause();
         }
-        else if(Input.GetKeyDown(KeyCode.Escape) && isPaused && pauseMenu.activeInHierarchy)
+        else if(Input.GetKeyDown(KeyCode.Escape) && isPaused && pauseMenu.activeInHierarchy && !isFinished)
         {
             Resume();
         }
